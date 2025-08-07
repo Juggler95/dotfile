@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 THEME_NAME="$1"
 THEME_DIR="$HOME/.config/colorschemes/$THEME_NAME"
