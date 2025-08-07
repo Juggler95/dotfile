@@ -1,0 +1,56 @@
+* {
+  font-familty: 'CaskaydiaCove Nerd Font', monospace;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+window {
+  background-color: rgba(0, 0, 0, 0.95); /* dark backdrop */
+  border: 2px solid #990104; /* neon red border */
+  border-radius: 16px;
+  padding: 10px;
+  box-shadow: 0 0 15px #990104;
+}
+
+#input {
+  margin: 10px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background-color: #1b1b2f;
+  color: #ffffff;
+  border: 2px solid #D883AF; /* neon purple border */
+  outline: none;
+  box-shadow: 0 0 6px #D883AF;
+}
+
+#inner-box {
+  background-color: transparent;
+}
+
+#outer-box {
+  padding: 10px;
+}
+
+#scroll {
+  margin-top: 10px;
+}
+
+#entry {
+  padding: 8px 12px;
+  border-radius: 12px;
+  background-color: #2d2d44;
+  margin: 4px 0;
+  transition: all 0.15s ease-in-out;
+}
+
+#entry:selected {
+  background-color: #990104;
+  color: #000000;
+  box-shadow: 0 0 10px #990104;
+  transform: scale(1.02);
+}
+

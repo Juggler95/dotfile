@@ -1,0 +1,66 @@
+* {
+  font-family: "Caskaydia Cove Nerd Font", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  padding: 0 10px;
+  transition: background 0.3s ease;
+}
+
+window#waybar {
+  background: #140D02;
+  border-bottom: 2px solid #530D0B;
+  color: #DB83B0;
+}
+
+window#waybar.hidden{
+  opacity: 0.75;
+}
+
+#workspaces button {
+  background: transparent;
+  color: #DB83B0;
+  padding: 2px 10px;
+  margin: 2px;
+}
+
+#workspaces button.active {
+  background-color: #530D0B;
+  color: #DB83B0;
+  margin-bottom: 5px;
+}
+
+#workspaces button.empty{
+  color: #763d9e;
+}
+
+#workspace button.empty.active{
+ background-color: #530D0B;
+ color: #323d49;
+}
+
+#clock,
+#memory,
+#network,
+#pulseaudio,
+#tray,
+#custom-launcher {
+  background-color: #1a1a2e;
+  color: #DB83B0;
+  border-radius: 6px;
+  margin: 3px 10px;
+  margin-bottom: 10px;
+  padding: 0 10px;
+}
+
+#pulseaudio.muted {
+  color: #ff1c1c;
+}
+
+#custom-launcher {
+  background: linear-gradient(135deg, #8000ff, #00f0ff);
+  color: white;
+  font-weight: bold;
+}
+
