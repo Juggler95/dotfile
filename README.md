@@ -36,6 +36,18 @@ then use GNU stow to create symlinks
 
 $ stow .
 ```
+
+### Zsh Plugins installs
+If you are using zsh and want the plugins I use use these commands 
+
+```
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+
+```
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
 ### Video Help
 
 The video I used to set this up
