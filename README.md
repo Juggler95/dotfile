@@ -25,8 +25,8 @@ First, check out the dotfiles repo in your $HOME directory using git
 
 ```
 
-$ git clone git@github.com:Juggler95/arch-linux-dotfiles.git
-$ cd dotfiles
+$ git clone git@github.com:Juggler95/dotfile.git
+$ cd dotfile
 ```
 
 
@@ -36,4 +36,8 @@ then use GNU stow to create symlinks
 
 $ stow .
 ```
+### Video Help
+
+The video I used to set this up
+
 https://www.youtube.com/watch?v=y6XCebnB9gs
