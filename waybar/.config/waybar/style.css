@@ -8,11 +8,10 @@
   transition: background 0.3s ease;
 }
 
-
 window#waybar {
-  background-color: rgba(0, 0, 0, 0.3);
-  border-bottom: 2px solid #9340A6;
-  color: #B0FEFE;
+  background: #140D02;
+  border-bottom: 2px solid #530D0B;
+  color: #DB83B0;
 }
 
 window#waybar.hidden{
@@ -21,19 +20,19 @@ window#waybar.hidden{
 
 #workspaces button {
   background: transparent;
-  color: #B0FEFE;
+  color: #DB83B0;
   padding: 2px 10px;
   margin: 2px;
 }
 
 #workspaces button.active {
-  background-color: #B0FEFE;
-  color: #9340A6;
+  background-color: #530D0B;
+  color: #DB83B0;
   margin-bottom: 5px;
 }
 
 #workspaces button.empty{
-  color: #9340A6;
+  color: #763d9e;
 }
 
 #workspace button.empty.active{
@@ -46,16 +45,24 @@ window#waybar.hidden{
 #network,
 #pulseaudio,
 #tray,
+#custom-mediaplayer.paused,
 #custom-launcher {
-  background-color: #9340A6;
-  color: #B0FEFE;
+  background-color: #1a1a2e;
+  color: #DB83B0;
   border-radius: 6px;
   margin: 3px 10px;
   margin-bottom: 10px;
-  padding: 5px 12px;
+  padding: 0 10px;
 }
 
-
+#custom-mediaplayer.playing{
+  background-color: #DB83B0;
+  color: #1a1a2e;
+  border-radius: 6px;
+  margin: 3px 10px;
+  margin-bottom: 10px;
+  padding: 0 10px;
+}
 
 #pulseaudio.muted {
   color: #ff1c1c;

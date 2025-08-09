@@ -6,6 +6,7 @@
   "modules-left": ["hyprland/workspaces", "sway/mode"],
   "modules-center": ["hyprland/window"],
   "modules-right": [
+    "custom/mediaplayer",
     "pulseaudio",
     "network",
     "clock",
@@ -26,7 +27,14 @@
                "*": [1, 2, 3, 4, 5]
          }
   },
-
+    "custom/mediaplayer": {
+      "format": "{} ",
+      "return-type": "json",
+      "exec": "~/.config/waybar/scripts/mediaplayer.sh", // Path to your custom script
+      "exec-if": "pgrep playerctld", // Only execute if playerctld is running
+      "on-click": "playerctl --player=spotify play-pause",
+      "interval": 1 // Set refresh interval as needed
+  },
   // Module configuration
   "sway/workspaces": {
     "disable-scroll": false,

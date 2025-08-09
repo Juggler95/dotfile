@@ -18,10 +18,17 @@ copy_with_overwrite() {
   fi
 }
 
+# Copy configs for various apps
 copy_with_overwrite "$THEME_DIR/hypr" "$HOME/.config/hypr"
 copy_with_overwrite "$THEME_DIR/waybar" "$HOME/.config/waybar"
 copy_with_overwrite "$THEME_DIR/kitty" "$HOME/.config/kitty"
 copy_with_overwrite "$THEME_DIR/wofi" "$HOME/.config/wofi"
+
+# Copy Fastfetch ascii.txt (if present)
+if [ -f "$THEME_DIR/ascii.txt" ]; then
+  mkdir -p "$HOME/.config/fastfetch"
+  cp "$THEME_DIR/ascii.txt" "$HOME/.config/fastfetch/ascii.txt"
+fi
 
 # Set wallpaper with swww (supports .jpg and .png)
 if command -v swww &> /dev/null; then
@@ -41,3 +48,4 @@ hyprctl reload
 killall waybar && waybar &
 
 notify-send "Theme Switched" "Applied theme: $THEME_NAME"
+

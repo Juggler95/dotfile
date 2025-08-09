@@ -46,6 +46,7 @@ window#waybar.hidden{
 #network,
 #pulseaudio,
 #tray,
+#custom-mediaplayer.paused,
 #custom-launcher {
   background-color: #9340A6;
   color: #B0FEFE;
@@ -53,9 +54,17 @@ window#waybar.hidden{
   margin: 3px 10px;
   margin-bottom: 10px;
   padding: 5px 12px;
+  transition: all 0.3s ease-in-out;
 }
 
-
+#custom-mediaplayer.playing{
+  background-color: #B0FEFE;
+  color: #9340A6;
+  border-radius: 6px;
+  margin: 3px 10px;
+  margin-bottom: 10px;
+  padding: 5px 12px;
+}
 
 #pulseaudio.muted {
   color: #ff1c1c;

@@ -45,9 +45,19 @@ window#waybar.hidden{
 #network,
 #pulseaudio,
 #tray,
+#custom-mediaplayer.paused,
 #custom-launcher {
   background-color: #1a1a2e;
   color: #DB83B0;
+  border-radius: 6px;
+  margin: 3px 10px;
+  margin-bottom: 10px;
+  padding: 0 10px;
+}
+
+#custom-mediaplayer.playing{
+  background-color: #DB83B0;
+  color: #1a1a2e;
   border-radius: 6px;
   margin: 3px 10px;
   margin-bottom: 10px;
