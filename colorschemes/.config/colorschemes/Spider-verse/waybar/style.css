@@ -21,23 +21,26 @@ window#waybar.hidden{
 #workspaces button {
   background: transparent;
   color: #DB83B0;
-  padding: 2px 10px;
-  margin: 2px;
+  padding: 0 0;
+  margin: 2px 1px;
 }
 
 #workspaces button.active {
   background-color: #530D0B;
   color: #DB83B0;
   margin-bottom: 5px;
+  padding: 0 0;
 }
 
 #workspaces button.empty{
   color: #763d9e;
+  padding: 0 0;
 }
 
 #workspace button.empty.active{
- background-color: #530D0B;
- color: #323d49;
+  background-color: #530D0B;
+  color: #323d49;
+  padding: 0 0;
 }
 
 #clock,
@@ -46,11 +49,12 @@ window#waybar.hidden{
 #pulseaudio,
 #tray,
 #custom-mediaplayer.paused,
+#disk,
 #custom-launcher {
   background-color: #1a1a2e;
   color: #DB83B0;
   border-radius: 6px;
-  margin: 3px 10px;
+  margin: 3px 3px;
   margin-bottom: 10px;
   padding: 0 10px;
 }

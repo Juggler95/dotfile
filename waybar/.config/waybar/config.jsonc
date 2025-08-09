@@ -4,24 +4,25 @@
   "layer": "top", // Waybar layer: "top" or "bottom"
   "position": "top", // Waybar position: "top", "bottom", "left", "right"
   "modules-left": ["hyprland/workspaces", "sway/mode"],
-  "modules-center": ["hyprland/window"],
+  "modules-center": ["hyprland/window", "custom/mediaplayer"],
   "modules-right": [
-    "custom/mediaplayer",
+    "disk",
     "pulseaudio",
     "network",
     "clock",
     "tray"
   ],
   "hyprland/workspaces": {
-    "format": "{name}",
+    "format": "{icon}",
     "format-icons": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "5": "",
-      "active": "",
-      "default": ""
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "5": " ",
+      "10": " ",
+      "active": " ",
+      "default": " "
+      //       
     },
          "persistent-workspaces": {
                "*": [1, 2, 3, 4, 5]
@@ -39,6 +40,12 @@
   "sway/workspaces": {
     "disable-scroll": false,
     "all-outputs": true
+  },
+
+  "disk":{
+    "interval": 30,
+    "format": "{specific_used: 0.0f}/{total}",
+    "unit": "GB"
   },
 
   "sway/mode": {
