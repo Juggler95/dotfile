@@ -1,0 +1,12 @@
+{
+  "include": ["~/.config/waybar/modules/modules.jsonc"],
+  "layer": "top", // Waybar layer: "top" or "bottom"
+  "position": "top", // Waybar position: "top", "bottom", "left", "right"
+  "modules-left": ["hyprland/workspaces", "sway/mode"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": [
+    "pulseaudio",
+    "clock",
+    "tray"
+  ]
+}

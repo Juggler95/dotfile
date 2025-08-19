@@ -8,11 +8,6 @@
   transition: background 0.3s ease;
 }
 
-
-center{
-  margin-right: 10px;
-}
-
 window#waybar {
   background-color: rgba(0, 0, 0, 0.3);
   border-bottom: 2px solid #9340A6;
