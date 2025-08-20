@@ -71,7 +71,7 @@ sudo pacman -S firefox
 ```
 
 
-### Other prgrams used with hyprland keybindings
+### Other programs used with hyprland keybindings
 I use Swww for wallpapers, grim/slurp for screen shots.
 
 
@@ -91,7 +91,20 @@ You'll also need playerctl for my spotify controlls.
 sudo pacman -S playerctl
 ```
 
+
+### Other programs
+```
+
+sudo pacman -S nvim
+```
+
+```
+sudo pacman -S fastfetch
+```
+
 I also use swaync for my notifcations but I do not have that in my dotfiles currently.
+
+also note I am probably missing the install commands for some other packages but I'll update this when I find them
 
 ### Video Help
 
