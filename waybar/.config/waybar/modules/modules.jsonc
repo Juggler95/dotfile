@@ -77,7 +77,7 @@
     },
 
     "clock": {
-      "format": "{:%I:%M %p}",         // 12-hour format
+      "format": "{:%m/%d %I:%M %p}",         // 12-hour format
       "timezone": "America/Los_Angeles"
     },
 
