@@ -14,22 +14,22 @@ local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<C-p>", builtin.find_files, {})
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 
--- Neo tree
+-- Neo-tree
 vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left <CR>")
-vim.keymap.set("n", "<leader>e", ":Neotree toggle <CR>")
+vim.keymap.set("n", "<leader>n", ":Neotree toggle <CR>")
 
---LSP
+-- LSP
 vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
 
 -- Undo tree
-vim.keymap.set("n", "<leader><F5>", vim.cmd.UndotreeToggle)
-vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeFocus)
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+vim.keymap.set("n", "<leader>f", vim.cmd.UndotreeFocus)
 
--- None-ls
+-- None-ls formatting
 vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
 
 -- Live server
-vim.keymap.set('n', "<C-l>", ':LiveServerStart<CR>')
-vim.keymap.set('n', "<C-x>", ':LiveServerStop<CR>')
+vim.keymap.set("n", "<leader>l", ":LiveServerStart<CR>")
+vim.keymap.set("n", "<leader>x", ":LiveServerStop<CR>")
