@@ -1,0 +1,12 @@
+# Move up and down with j and k
+key_up=k
+key_down=j
+
+# Scroll half-page with Ctrl-u and Ctrl-d
+key_pgup=Control-u
+key_pgdn=Control-d
+
+# These are standard Wofi keys that are useful for Vim users
+key_hide_search=Escape
+key_exit=q # Exit Wofi
+key_submit=Return # Launch the selected entry
