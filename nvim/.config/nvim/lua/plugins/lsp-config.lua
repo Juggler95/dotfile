@@ -1,4 +1,3 @@
-
 return {
 	{
 		"mason-org/mason.nvim",
@@ -17,21 +16,23 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
-    lazy = false,
+		lazy = false,
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			local lspconfig = require("lspconfig")
 			lspconfig.lua_ls.setup({
-				capabilities = capabilities
+				capabilities = capabilities,
 			})
 			lspconfig.ts_ls.setup({
-				capabilities = capabilities
+				capabilities = capabilities,
 			})
 			lspconfig.html.setup({
-				capabilities = capabilities
+				capabilities = capabilities,
 			})
-
+			lspconfig.cssls.setup({
+				capabilities = capabilities,
+			})
 		end,
 	},
 }
