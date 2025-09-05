@@ -1,21 +1,24 @@
 #!/bin/zsh
 
-THEME_NAME="$1"
-THEME_DIR="$HOME/.config/colorschemes/$THEME_NAME"
+# Full path to the selected theme folder
+THEME_DIR="$1"
+if [ -z "$THEME_DIR" ] || [ ! -d "$THEME_DIR" ]; then
+    echo "Error: Theme folder not found!"
+    exit 1
+fi
+
+THEME_NAME=$(basename "$THEME_DIR")
 
 copy_with_overwrite() {
-  src_dir="$1"
-  dest_dir="$2"
+    local src_dir="$1"
+    local dest_dir="$2"
 
-  if [ -d "$src_dir" ]; then
-    mkdir -p "$dest_dir"
-    for file in "$src_dir"/*; do
-      filename=$(basename "$file")
-      if [ -f "$file" ]; then
-        cp "$file" "$dest_dir/$filename"
-      fi
-    done
-  fi
+    if [ -d "$src_dir" ]; then
+        mkdir -p "$dest_dir"
+        for file in "$src_dir"/*; do
+            [ -f "$file" ] && cp "$file" "$dest_dir/"
+        done
+    fi
 }
 
 # Copy configs for various apps
@@ -24,23 +27,26 @@ copy_with_overwrite "$THEME_DIR/waybar" "$HOME/.config/waybar"
 copy_with_overwrite "$THEME_DIR/kitty" "$HOME/.config/kitty"
 copy_with_overwrite "$THEME_DIR/wofi" "$HOME/.config/wofi"
 
-# Copy Fastfetch ascii.txt (if present)
+# Copy Fastfetch ascii.txt
 if [ -f "$THEME_DIR/ascii.txt" ]; then
-  mkdir -p "$HOME/.config/fastfetch"
-  cp "$THEME_DIR/ascii.txt" "$HOME/.config/fastfetch/ascii.txt"
+    mkdir -p "$HOME/.config/fastfetch"
+    cp "$THEME_DIR/ascii.txt" "$HOME/.config/fastfetch/ascii.txt"
 fi
 
-# Set wallpaper with swww (supports .jpg and .png)
-if command -v swww &> /dev/null; then
-  if [ -f "$THEME_DIR/wallpaper.jpg" ]; then
-    WALLPAPER="$THEME_DIR/wallpaper.jpg"
-  elif [ -f "$THEME_DIR/wallpaper.png" ]; then
-    WALLPAPER="$THEME_DIR/wallpaper.png"
-  fi
+# Copy ascii art for snacks.nvim (WebP only)
+# if [ -f "$THEME_DIR/snacks-ascii.webp" ]; then
+#     cp "$THEME_DIR/snacks-ascii.webp" "$HOME/.config/colorschemes/current-ascii-nvim.webp"
+# fi
 
-  if [ -n "$WALLPAPER" ]; then
-    swww img "$WALLPAPER" --transition-type wipe --transition-duration 2
-  fi
+# Set wallpaper with swww
+if command -v swww &> /dev/null; then
+    WALLPAPER=""
+    [ -f "$THEME_DIR/wallpaper.jpg" ] && WALLPAPER="$THEME_DIR/wallpaper.jpg"
+    [ -f "$THEME_DIR/wallpaper.png" ] && WALLPAPER="$THEME_DIR/wallpaper.png"
+
+    if [ -n "$WALLPAPER" ]; then
+        swww img "$WALLPAPER" --transition-type wipe --transition-duration 2
+    fi
 fi
 
 # Reload Hyprland and Waybar
@@ -48,4 +54,3 @@ hyprctl reload
 killall waybar && waybar &
 
 notify-send "Theme Switched" "Applied theme: $THEME_NAME"
-
