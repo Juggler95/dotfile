@@ -13,7 +13,7 @@ return {
         null_ls.builtins.formatting.rubocop, -- Ruby formatter
 
         -- Linters
-        null_ls.builtins.diagnostics.eslint_d, -- JS/TS linter
+        null_ls.builtins.diagnostics.eslint, -- JS/TS linter
         null_ls.builtins.diagnostics.rubocop, -- Ruby linter
         null_ls.builtins.diagnostics.stylelint, -- CSS linter
       },
