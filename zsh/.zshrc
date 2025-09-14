@@ -76,4 +76,4 @@ fi
 # fi
 
 # Add custom PATH entries
-export PATH="$HOME/Desktop/MCSR/waywall/build/waywall:$PATH"
+# export PATH="$HOME/Desktop/MCSR/waywall/build/waywall:$PATH"

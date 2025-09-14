@@ -11,7 +11,7 @@ return {
 				{ section = "header" },
 				{ section = "keys", gap = 0, padding = 0 },
 				{ section = "startup" },
-				{ section = "recent_files", icon = " ", title = "Recent Files", pane = 1, indent = 3, padding = 1 },
+				{ section = "recent_files", icon = " ", title = "Recent Files", pane = 1, indent = 3, padding = 1},
 				{
 					section = "terminal",
 					-- cmd = "ascii-image-converter ~/Downloads/jinx.webp -C -c",
