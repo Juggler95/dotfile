@@ -2,7 +2,7 @@ return {
 	"folke/snacks.nvim",
 	priority = 1000,
 	lazy = false,
-	--@type snacks.Config
+	---@type snacks.Config
 	opts = {
 		bigfile = { enabled = true },
 		dashboard = {
@@ -11,14 +11,16 @@ return {
 				{ section = "header" },
 				{ section = "keys", gap = 0, padding = 0 },
 				{ section = "startup" },
-				{ section = "recent_files", icon = " ", title = "Recent Files", pane = 1, indent = 3, padding = 1},
+				{ section = "recent_files", icon = " ", title = "Recent Files", pane = 1, indent = 3, padding = 1 },
 				{
 					section = "terminal",
 					-- cmd = "ascii-image-converter ~/Downloads/jinx.webp -C -c",
 					cmd = "ascii-image-converter ~/.config/colorschemes/Arcane/jinx.webp -C -c",
 					pane = 2,
 					indent = 1,
-					height = 20,
+					-- height = 30,
+					-- height = math.floor(vim.o.lines * 0.8),
+					height = math.max(10, math.floor(vim.o.lines * 0.5 - #vim.fn.readdir(vim.fn.getcwd()) * 0.1)),
 				},
 			},
 		},
