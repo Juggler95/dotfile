@@ -8,7 +8,7 @@ vim.opt.cursorline = true
 vim.opt.autoread = true
 
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
-vim.keymap.set("n", "<leader>s", ":w<CR>")
+vim.keymap.set("n", "<leader>s", "<cmd>w<CR>")
 
 -- TELESCOPE
 local builtin = require("telescope.builtin")
