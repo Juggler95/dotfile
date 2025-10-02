@@ -7,8 +7,16 @@ vim.opt.autowrite = true
 vim.opt.cursorline = true
 vim.opt.autoread = true
 
+vim.opt.swapfile = false
+
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
 vim.keymap.set("n", "<leader>s", "<cmd>w<CR>")
+
+-- Navigate vim panes better
+vim.keymap.set("n", "<C-k>", ":wincmd k<CR>")
+vim.keymap.set("n", "<C-j>", ":wincmd j<CR>")
+vim.keymap.set("n", "<C-h>", ":wincmd h<CR>")
+vim.keymap.set("n", "<C-l>", ":wincmd l<CR>")
 
 -- TELESCOPE
 local builtin = require("telescope.builtin")

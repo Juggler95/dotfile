@@ -18,6 +18,8 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration --------------------------------------------------
 
+export PATH="$HOME/.tmuxifier/bin:$PATH"
+
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -67,6 +69,8 @@ fi
 if command -v fastfetch &>/dev/null && [[ -f "$HOME/.config/fastfetch/ascii.txt" ]]; then
     fastfetch -l "$HOME/.config/fastfetch/ascii.txt"
 fi
+
+eval "$(tmuxifier init -)"
 
 # ----------------------------
 # NVIDIA fix for GLFW / Waywall
