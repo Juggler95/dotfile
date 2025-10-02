@@ -1,13 +1,8 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export EDITOR='nvim'
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
 # Set list of plugins to load (must be before sourcing oh-my-zsh)
@@ -29,15 +24,6 @@ export PATH="$HOME/.tmuxifier/bin:$PATH"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-
-# Example aliases
-# alias zshconfig="nvim ~/.zshrc"
-# alias ohmyzsh="nvim ~/.oh-my-zsh"
 
 # Case-sensitive completion
 CASE_SENSITIVE="true"
@@ -71,13 +57,3 @@ if command -v fastfetch &>/dev/null && [[ -f "$HOME/.config/fastfetch/ascii.txt"
 fi
 
 eval "$(tmuxifier init -)"
-
-# ----------------------------
-# NVIDIA fix for GLFW / Waywall
-# ----------------------------
-# if [[ -n "$NVIDIA_VISIBLE_DEVICES" ]] || command -v nvidia-smi &>/dev/null; then
-#     export __GL_THREADED_OPTIMIZATIONS=0
-# fi
-
-# Add custom PATH entries
-# export PATH="$HOME/Desktop/MCSR/waywall/build/waywall:$PATH"
