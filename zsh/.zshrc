@@ -13,8 +13,8 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration --------------------------------------------------
 
-export PATH="$HOME/.tmuxifier/bin:$PATH"
-export PATH="$PATH:/usr/local/bin/scripts"
+export PATH="$HOME/.tmuxifier/bin:$PATH:/usr/local/bin/scripts"
+# export PATH="$PATH:/usr/local/bin/scripts"
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then

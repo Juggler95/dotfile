@@ -8,4 +8,4 @@ configuration{
   icon-theme: "Papirus";
 }
 
-@theme "/home/juggler95/.config/rofi/themes/rounded-green-dark.rasi"
+@theme "/home/juggler95/.config/rofi/themes/rounded-red-dark.rasi"

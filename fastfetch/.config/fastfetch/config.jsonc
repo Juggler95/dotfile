@@ -42,6 +42,11 @@
       "keyColor": "green",
     },
     {
+      "type": "localip",
+      "key": "└ └󰩠",
+      "keyColor": "green",
+    },
+    {
       "type": "custom",
       "format": "\u001b[90m└────────────────────────────────────────────────────┘",
     },

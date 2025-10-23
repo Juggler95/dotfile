@@ -15,7 +15,7 @@ return {
 				{
 					section = "terminal",
 					-- cmd = "ascii-image-converter ~/Downloads/jinx.webp -C -c",
-					cmd = "ascii-image-converter ~/.config/colorschemes/Arcane/jinx.webp -C -c",
+					cmd = "ascii-image-converter ~/.config/colorschemes/jinx/jinx.webp -C -c",
 					pane = 2,
 					indent = 1,
 					-- height = 30,
