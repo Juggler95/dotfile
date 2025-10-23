@@ -6,3 +6,4 @@ vim.cmd.colorscheme("tokyonight") -- tokyonight, catppuccin, cyberdream
 
 vim.opt.number = true
 vim.opt.clipboard = "unnamedplus"
+vim.wo.relativenumber = true

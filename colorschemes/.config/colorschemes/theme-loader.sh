@@ -25,7 +25,7 @@ copy_with_overwrite() {
 copy_with_overwrite "$THEME_DIR/hypr" "$HOME/.config/hypr"
 copy_with_overwrite "$THEME_DIR/waybar" "$HOME/.config/waybar"
 copy_with_overwrite "$THEME_DIR/kitty" "$HOME/.config/kitty"
-copy_with_overwrite "$THEME_DIR/wofi" "$HOME/.config/wofi"
+copy_with_overwrite "$THEME_DIR/rofi" "$HOME/.config/rofi"
 
 # Copy Fastfetch ascii.txt
 if [ -f "$THEME_DIR/ascii.txt" ]; then
@@ -45,7 +45,7 @@ if command -v swww &> /dev/null; then
     [ -f "$THEME_DIR/wallpaper.png" ] && WALLPAPER="$THEME_DIR/wallpaper.png"
 
     if [ -n "$WALLPAPER" ]; then
-        swww img "$WALLPAPER" --transition-type wipe --transition-duration 2
+        swww img "$WALLPAPER" --transition-type random --transition-duration 2
     fi
 fi
 

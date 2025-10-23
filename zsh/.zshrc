@@ -2,7 +2,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR='nvim'
 
- See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
 # Set list of plugins to load (must be before sourcing oh-my-zsh)
@@ -14,6 +14,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration --------------------------------------------------
 
 export PATH="$HOME/.tmuxifier/bin:$PATH"
+export PATH="$PATH:/usr/local/bin/scripts"
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -27,6 +28,12 @@ export PATH="$HOME/.tmuxifier/bin:$PATH"
 
 # Case-sensitive completion
 CASE_SENSITIVE="true"
+
+bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s '\eh' "tmux-sessionizer -s 0\n"
+bindkey -s '\ej' "tmux-sessionizer -s 1\n"
+bindkey -s '\ek' "tmux-sessionizer -s 2\n"
+bindkey -s '\el' "tmux-sessionizer -s 3\n"
 
 # ----------------------------
 # Starship Prompt (load AFTER Oh My Zsh)

@@ -7,7 +7,7 @@ SCRIPT_PATH="$THEME_DIR/theme-loader.sh"
 THEMES=$(for dir in "$THEME_DIR"/*/; do basename "$dir"; done | sort)
 
 # Show Wofi dmenu for theme selection
-CHOSEN=$(echo "$THEMES" | wofi -i --dmenu --prompt "Choose Theme")
+CHOSEN=$(echo "$THEMES" | rofi -i -dmenu -p "Choose Theme")
 
 # Apply theme if selected
 if [ -n "$CHOSEN" ]; then

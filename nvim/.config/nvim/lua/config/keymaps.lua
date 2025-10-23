@@ -12,11 +12,18 @@ vim.opt.swapfile = false
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
 vim.keymap.set("n", "<leader>s", "<cmd>w<CR>")
 
--- Navigate vim panes better
-vim.keymap.set("n", "<C-k>", ":wincmd k<CR>")
-vim.keymap.set("n", "<C-j>", ":wincmd j<CR>")
-vim.keymap.set("n", "<C-h>", ":wincmd h<CR>")
-vim.keymap.set("n", "<C-l>", ":wincmd l<CR>")
+-- Navigate tmux panes better
+vim.keymap.set("n", "<M-k>", ":wincmd k<CR>")
+vim.keymap.set("n", "<M-j>", ":wincmd j<CR>")
+vim.keymap.set("n", "<M-h>", ":wincmd h<CR>")
+vim.keymap.set("n", "<M-l>", ":wincmd l<CR>")
+
+-- tmux-sessionizer
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+-- vim.keymap.set("n", "<C-h>", "<cmd>silent !tmux neww tmux-sessionizer -s 0<CR>")
+-- vim.keymap.set("n", "<C-j>", "<cmd>silent !tmux neww tmux-sessionizer -s 1<CR>")
+-- vim.keymap.set("n", "<C-k>", "<cmd>silent !tmux neww tmux-sessionizer -s 2<CR>")
+-- vim.keymap.set("n", "<C-l>", "<cmd>silent !tmux neww tmux-sessionizer -s 3<CR>")
 
 -- TELESCOPE
 local builtin = require("telescope.builtin")

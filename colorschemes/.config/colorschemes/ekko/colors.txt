@@ -1,0 +1,4 @@
+border #727B71
+inactive border #3E282D
+terminal background #4D3334
+empty workspace #72aB71
