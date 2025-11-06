@@ -2,13 +2,16 @@
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR='nvim'
 
-See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+#See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
 # Set list of plugins to load (must be before sourcing oh-my-zsh)
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
+# Can't use vi mode plugin with tmux sessionizer
+# zsh-vi-mode
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
+export PATH="$PATH:$HOME/.scripts"
 source $ZSH/oh-my-zsh.sh
 
 # User configuration --------------------------------------------------
@@ -29,13 +32,8 @@ export PATH="$HOME/.tmuxifier/bin:$PATH:/usr/local/bin/scripts"
 # Case-sensitive completion
 CASE_SENSITIVE="true"
 
-bindkey -s ^f "tmux-sessionizer\n"
-bindkey -s '\eh' "tmux-sessionizer -s 0\n"
-bindkey -s '\ej' "tmux-sessionizer -s 1\n"
-bindkey -s '\ek' "tmux-sessionizer -s 2\n"
-bindkey -s '\el' "tmux-sessionizer -s 3\n"
 
-# ----------------------------
+
 # Starship Prompt (load AFTER Oh My Zsh)
 # ----------------------------
 if command -v starship &>/dev/null; then
@@ -61,6 +59,14 @@ fi
 # ----------------------------
 if command -v fastfetch &>/dev/null && [[ -f "$HOME/.config/fastfetch/ascii.txt" ]]; then
     fastfetch -l "$HOME/.config/fastfetch/ascii.txt"
+else
+  fastfetch
 fi
 
+bindkey -s '^f' "tmux-sessionizer\n"
+# bindkey -s '\eh' "tmux-sessionizer -s 0\n"
+# bindkey -s '\et' "tmux-sessionizer -s 1\n"
+# bindkey -s '\en' "tmux-sessionizer -s 2\n"
+# bindkey -s '\es' "tmux-sessionizer -s 3\n"
+#
 eval "$(tmuxifier init -)"

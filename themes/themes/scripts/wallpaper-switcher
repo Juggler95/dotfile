@@ -1,0 +1,114 @@
+#!/usr/bin/env bash
+
+# Put where your wallpapers are saved
+# Wallpapers need the [TAG] file.png/jpg... naming style, the tag has to be all caps
+# it should work with my image file types
+FOLDER="$HOME/Pictures/Wallpapers"
+SCRIPT="$HOME/themes/scripts/pywal16"
+
+ASCII="$HOME/themes/ascii"
+ROFI="$HOME/themes/rofi"
+
+menu() {
+  FILES=() # full filenames
+  TAGS=()  # all tags
+
+  # Step 1: Gather files and extract tags
+  while IFS= read -r file; do
+    FILES+=("$file")
+    tag=$(echo "$file" | grep -oP '\[\K[^\]]+(?=\])')
+    if [[ -n "$tag" ]]; then
+      TAGS+=("$tag")
+    fi
+  done < <(ls "$FOLDER")
+
+  # Remove duplicate tags
+  UNIQUE_TAGS=($(printf "%s\n" "${TAGS[@]}" | sort -u))
+
+  # Step 2: Ask user to pick a tag
+  SELECTED_TAG=$(printf "%s\n" "${UNIQUE_TAGS[@]}" | rofi -dmenu -i -p "Select Tag")
+  [[ -z "$SELECTED_TAG" ]] && exit 0
+
+  # Step 3: Build wallpaper choices with the selected tag
+  CHOICES=()
+  CHOICE_FILES=()
+  for file in "${FILES[@]}"; do
+    tag=$(echo "$file" | grep -oP '\[\K[^\]]+(?=\])')
+    if [[ "$tag" == "$SELECTED_TAG" ]]; then
+      # Remove extension AND remove the tag itself from display
+      display_name="${file%.*}"                                                          # remove extension
+      display_name="${display_name//\[$SELECTED_TAG\]/}"                                 # remove [TAG]
+      display_name="$(echo "$display_name" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')" # trim spaces
+
+      CHOICES+=("$display_name")
+      CHOICE_FILES+=("$file")
+    fi
+  done
+
+  # Step 4: Let user pick a wallpaper from that tag
+  CHOICE=$(printf '%s\n' "${CHOICES[@]}" | rofi -dmenu -i -p "Select Wallpaper")
+  [[ -z "$CHOICE" ]] && exit 0
+
+  # Map choice back to full file
+  for i in "${!CHOICES[@]}"; do
+    if [[ "${CHOICES[$i]}" == "$CHOICE" ]]; then
+      FILE="${CHOICE_FILES[$i]}"
+      break
+    fi
+  done
+
+  # Step 5: Apply wallpaper + themes
+  if [[ -n "$FILE" && -f "$FOLDER/$FILE" ]]; then
+    TAG=$(echo "$FILE" | grep -oP '\[\K[^\]]+(?=\])')
+
+    # add your tags here if you want rofi, ascii for fastfetch to change
+    case "$TAG" in
+    "EKKO")
+      ln -sf "$ASCII/ekko.txt" ~/.config/fastfetch/ascii.txt
+      ln -sf "$ROFI/ekko.rasi" ~/.config/rofi/config.rasi
+      echo "updating to ekko"
+      ;;
+    "JINX")
+      ln -sf "$ASCII/jinx.txt" ~/.config/fastfetch/ascii.txt
+      ln -sf "$ROFI/jinx.rasi" ~/.config/rofi/config.rasi
+      echo "updating to jinx"
+      ;;
+    "SW")
+      rm -f ~/.config/fastfetch/ascii.txt
+      ln -sf "$ROFI/sw.rasi" ~/.config/rofi/config.rasi
+      echo "updating to star wars"
+      ;;
+    "SV")
+      ln -sf "$ASCII/spider-verse.txt" ~/.config/fastfetch/ascii.txt
+      ln -sf "$ROFI/spider-verse.rasi" ~/.config/rofi/config.rasi
+      echo "updating to spider-verse"
+      ;;
+    *)
+      rm -f ~/.config/fastfetch/ascii.txt
+      ;;
+    esac
+
+    swww img "$FOLDER/$FILE" --transition-fps 240 --transition-step 255 --transition-type any &&
+      wal -i "$FOLDER/$FILE" -o "$SCRIPT" &&
+      ln -sf "$FOLDER/$FILE" ~/.config/hypr/hyprlock/hyprlock.png
+
+    echo file: "$FOLDER/$FILE"
+
+  fi
+}
+
+case "$#" in
+0)
+  menu
+  ;;
+1)
+  wal -i "$1" -o "$SCRIPT"
+  ;;
+2)
+  wal -i "$2" -o "$SCRIPT"
+  ;;
+*)
+  echo "Usage: $0 [file]"
+  exit 1
+  ;;
+esac

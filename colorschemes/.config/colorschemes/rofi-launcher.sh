@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env bash
 
 THEME_DIR="$HOME/.config/colorschemes"
 SCRIPT_PATH="$THEME_DIR/theme-loader.sh"
@@ -11,5 +11,5 @@ CHOSEN=$(echo "$THEMES" | rofi -i -dmenu -p "Choose Theme")
 
 # Apply theme if selected
 if [ -n "$CHOSEN" ]; then
-    "$SCRIPT_PATH" "$THEME_DIR/$CHOSEN"
+  "$SCRIPT_PATH" "$THEME_DIR/$CHOSEN"
 fi

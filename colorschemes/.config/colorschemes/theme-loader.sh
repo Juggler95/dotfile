@@ -45,7 +45,7 @@ if command -v swww &> /dev/null; then
     [ -f "$THEME_DIR/wallpaper.png" ] && WALLPAPER="$THEME_DIR/wallpaper.png"
 
     if [ -n "$WALLPAPER" ]; then
-        swww img "$WALLPAPER" --transition-type random --transition-duration 2
+        swww img "$WALLPAPER" --transition-type fade --transition-duration 3
     fi
 fi
 

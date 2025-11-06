@@ -1,5 +1,5 @@
 * {
-  font-familty: 'CaskaydiaCove Nerd Font', monospace;
+  font-familty: "CaskaydiaCove Nerd Font", monospace;
   font-size: 16px;
   background-color: transparent;
   border: none;
@@ -8,8 +8,10 @@
 }
 
 window {
-  background-color: rgba(0, 0, 0, 0.95); /* dark backdrop */
-  border: 2px solid #B0FEFE; /* neon red border */
+  background-color: rgba(0, 0, 0, 0.95);
+  /* dark backdrop */
+  border: 2px solid #b0fefe;
+  /* neon red border */
   border-radius: 16px;
   padding: 10px;
 }
@@ -20,10 +22,10 @@ window {
   border-radius: 12px;
   background-color: #1b1b2f;
   color: #ffffff;
-  border: 2px solid #9340A6; /* neon purple border */
+  border: 2px solid #9340a6;
+  /* neon purple border */
   outline: none;
-  box-shadow: 0 0 6px #9340A6;
-
+  box-shadow: 0 0 6px #9340a6;
 }
 
 #inner-box {
@@ -48,10 +50,10 @@ window {
 }
 
 #entry:selected {
-  background-color: #B0FEFE;
-  border: 3px solid #9340A6; /* neon purple border */
-  color: #9340A6;
+  background-color: #b0fefe;
+  border: 3px solid #9340a6;
+  /* neon purple border */
+  color: #9340a6;
   transform: scale(1.02);
   border-radius: 12px;
 }
-

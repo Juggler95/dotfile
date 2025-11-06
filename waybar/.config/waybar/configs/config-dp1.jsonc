@@ -4,11 +4,5 @@
   "position": "top", // Waybar position: "top", "bottom", "left", "right"
   "modules-left": ["hyprland/workspaces", "sway/mode"],
   "modules-center": ["hyprland/window", "custom/mediaplayer"],
-  "modules-right": [
-    "disk",
-    "pulseaudio",
-    "network",
-    "clock",
-    "tray"
-  ]
+  "modules-right": ["disk", "pulseaudio", "network", "clock", "tray"],
 }

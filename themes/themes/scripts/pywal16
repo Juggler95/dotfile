@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Restart Waybar
+killall -9 waybar
+
+waybar &
+
+# Reload Hyprland
+hyprctl reload
